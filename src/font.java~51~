@@ -1,0 +1,40 @@
+import javax.microedition.lcdui.*;
+
+public class font extends frmMain{
+  private static Image[] fontX;
+  private int fX;
+  final int alLeft=0;
+  final int alCenter=1;
+  final int alRight=2;
+
+  public font() {
+    try {
+      fontX=new Image[2];
+      fontX[0]=Image.createImage(getClass().getResourceAsStream("/font1.png"));
+      fontX[1]=Image.createImage(getClass().getResourceAsStream("/font2.png"));
+      setFont(0);
+    }catch(Exception e){
+      //error
+    }
+  }
+
+  void setFont(int fontX) {
+    switch (fontX) {
+      case 0:
+        this.fX=fontX;
+        break;
+      case 1:
+        this.fX=fontX;
+        break;
+    }
+  }
+
+  Image getFont() {
+    return this.fontX[this.fX];
+  }
+
+  void drawStr(String s, int x, int y, int al) {
+    //graphics.drawString(s,x,y,Graphics.LEFT|Graphics.TOP);
+  }
+
+}
